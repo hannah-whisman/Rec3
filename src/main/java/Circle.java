@@ -12,10 +12,6 @@ public class Circle
     private double radius;
 
 
-    /**
-     * Default constructor that initializes an instance of Circle
-     * to (0,0) with a radius of 1.0.
-     */
     public Circle()
     {
         radius = 1.0;
@@ -30,8 +26,10 @@ public class Circle
      */
     public Circle(double radius)
     {
-        setRadius(radius);
-        setLocation(location);
+        //setRadius(radius);
+        //setLocation(location);
+        this.radius = radius;
+        location = new Point();
 
 
     }
@@ -45,8 +43,10 @@ public class Circle
      */
     public Circle(Point location, double radius)
     {
-        setRadius(radius);
-        setLocation(location);
+        //setRadius(radius);
+        //setLocation(location);
+        this.radius = radius;
+        this.location = new Point(location);
     }
 
     //accessors
@@ -100,9 +100,6 @@ public class Circle
      */
     public boolean contains(Point p)
     {
-        /**
-         * if the distanceto is less than or equal to the radius of the circle then the point is in the circle
-         */
 
         return location.distanceTo(p) <= radius;
 
@@ -128,11 +125,7 @@ public class Circle
      */
     public String toString()
     {
-        String location;
-        location = "";
-        String radius = null;
-        String s = "Circle/loc=" + this.location + ",radius=" + this.radius;
-        return s;
+        return "Circle/loc=" + this.location + ",radius=" + this.radius;
     }
 }
 
